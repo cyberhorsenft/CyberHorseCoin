@@ -12,7 +12,7 @@ import "./IPancake.sol";
 import "./GasHelper.sol";
 import "./SwapHelper.sol";
 
-contract HCoin is ERC20Burnable, GasHelper, TokenErrors, TokenEvents, Ownable {
+contract CHorse is ERC20Burnable, GasHelper, TokenErrors, TokenEvents, Ownable {
   string public constant URL = "https://www.cyberhorse.io/";
 
   uint public constant MAX_SUPPLY = 10_000_000e18;
@@ -30,7 +30,7 @@ contract HCoin is ERC20Burnable, GasHelper, TokenErrors, TokenEvents, Ownable {
 
   bool _reentrance;
 
-  constructor() ERC20("CyberHorseCoin", "HCoin") Ownable(_msgSender()) {
+  constructor() ERC20("CyberHorseCoin", "CHorse") Ownable(_msgSender()) {
     PancakeRouter router = PancakeRouter(PANCAKE_ROUTER);
     address liquidityPool = address(PancakeFactory(router.factory()).createPair(WBNB, address(this)));
 
